@@ -33,8 +33,9 @@ open class OutpanObject: NSObject {
     public var name: String?
     public let gtin: String
     open var outpanUrl: String?
-
+    
     public var attributes: Dictionary<String, String> = [:]
+    public var categories: Array<String> = []
     public var images: Array<String> = []
     public var videos: Array<String> = []
     
@@ -47,7 +48,7 @@ open class OutpanObject: NSObject {
             self.gtin = jsonDict["gtin"] as? String ?? gtin
             self.outpanUrl = jsonDict["outpan_url"] as? String
             self.name = jsonDict["name"] as? String
-
+            
             if let adict = jsonDict["attributes"] as? NSDictionary {
                 for aEntry in adict {
                     if let key = aEntry.key as? String, let value = aEntry.value as? String {
@@ -55,7 +56,15 @@ open class OutpanObject: NSObject {
                     }
                 }
             }
-
+            
+            if let cdict = jsonDict["categories"] as? NSArray {
+                for cEntry in cdict {
+                    if let cRef = cEntry as? String {
+                        self.categories.append(cRef)
+                    }
+                }
+            }
+            
             if let idict = jsonDict["images"] as? NSArray {
                 for iEntry in idict {
                     if let imageRef = iEntry as? String {
@@ -63,7 +72,7 @@ open class OutpanObject: NSObject {
                     }
                 }
             }
-
+            
             if let vdict = jsonDict["videos"] as? NSArray {
                 for vEntry in vdict {
                     if let videoRef = vEntry as? String {
