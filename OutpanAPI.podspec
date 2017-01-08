@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
 
   s.framework    = 'AVFoundation'
-  s.source_files = 'Sources/*.swift'
+  s.source_files = 'OutpanAPI/*.swift'
   s.requires_arc = true
 end
