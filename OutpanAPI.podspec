@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'OutpanAPI'
   s.module_name      = 'OutpanAPI'
-  s.version          = '1.1'
+  s.version          = '1.2'
   s.license          = 'MIT'
   s.summary          = 'Outpan API wrapper written in Swift'
   s.homepage         = 'https://github.com/Rehsco/OutpanAPI.git'
