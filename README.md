@@ -1,3 +1,5 @@
+_Deprecated!_ The Outpan API is no longer accessible. This library is kept for reference.
+
 # OutpanAPI
 An Outpan API wrapper written in Swift
 
